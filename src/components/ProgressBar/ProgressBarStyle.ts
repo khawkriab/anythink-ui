@@ -1,27 +1,11 @@
 import { css } from '@emotion/css';
 
-// css variable
-// --progressbar-height
-// --progressbar-point-color
-// --progressbar-point-color-active
-// --progressbar-point-border-color
-// --progressbar-point-border-color-active
-// --progressbar-point-background-color
-// --progressbar-point-background-color-active
-// --progressbar-point-size
-// --progressbar-point-size-active
-// --progressbar-line-width
-// --progressbar-line-height
-// --progressbar-line-color
-// --progressbar-line-background-color
-// --progressbar-label-color
-// --progressbar-label-font-size
-
 export const progressContainer = css`
   label: progressbar;
 
   position: relative;
   display: flex;
+  justify-content: center;
   height: var(--progressbar-height);
   padding: var(--progressbar-padding);
   overflow: hidden;
@@ -53,7 +37,6 @@ export const progressContainer = css`
   .scroll-container {
     position: relative;
     display: flex;
-    align-items: center;
     max-width: 100%;
     overflow: hidden hidden;
 

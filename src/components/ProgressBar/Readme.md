@@ -1,0 +1,23 @@
+css variable
+
+--progressbar-height: auto;
+--progressbar-padding: 1.5rem 0;
+--progressbar-point-color: #000;
+--progressbar-point-color-active: #fff;
+--progressbar-point-color-disabled: #000;
+--progressbar-point-border-color: #00f;
+--progressbar-point-border-color-active: #00f;
+--progressbar-point-border-color-disabled: #00f;
+--progressbar-point-border-size: 4px;
+--progressbar-point-background-color: #ebebeb;
+--progressbar-point-background-color-active: #00f;
+--progressbar-point-background-color-disabled: #777;
+--progressbar-point-size: 30px;
+--progressbar-point-size-active: 35px;
+--progressbar-line-width: 100px;
+--progressbar-line-height: 4px;
+--progressbar-line-background-color: #00f;
+--progressbar-line-background-color-active: #ff0000;
+--progressbar-label-color: #000;
+--progressbar-label-color-active: #000;
+--progressbar-label-font-size: 1rem;

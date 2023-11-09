@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "UI test",
   "dependencies": {
-    "anythink-ui": "file:../anythink-ui-0.0.2.tgz",
+    "anythink-ui": "file:../anythink-ui-0.0.9.tgz",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

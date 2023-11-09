@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
-import { ProgressBar } from 'anythink-ui';
+import { Calendar, ProgressBar } from 'anythink-ui';
 import { css } from '@emotion/css';
+import dayjs from 'dayjs';
+
+import localTH from 'dayjs/locale/th';
+import NextIcon from './icons/NextIcon';
+
+dayjs.locale(localTH);
 
 export const App = () => {
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
   return (
     <div style={{ height: '80vh', border: '4px solid #00f' }}>
       <button onClick={() => setIsDisabled(!isDisabled)}>set disabled</button>
+      <div style={{ fontSize: '72px' }}>
+        <NextIcon /> <NextIcon />
+      </div>
       <ProgressBar
         className="progressbar-default"
         activeKey="qrs"
@@ -21,6 +30,9 @@ export const App = () => {
           { key: 'xyz', pointLabel: '2', label: 'fff', disabled: isDisabled },
         ]}
       />
+      <div>
+        <Calendar value={dayjs()} />
+      </div>
     </div>
   );
 };

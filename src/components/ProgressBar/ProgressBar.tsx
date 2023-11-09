@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 type ReactNodeChildren = { children: React.ReactNode };
 
 type TItems = {
-  key: string;
+  key: string | number;
   label: React.ReactNode;
   pointLabel: React.ReactNode;
   disabled?: boolean;
@@ -51,7 +51,7 @@ function ProgressItemPoint({
         {children}
       </button>
       <div className="progressbar-line">
-        <div className="progressbar-percent" style={{ width: progressPercent }}></div>
+        <div className="progressbar-percent" style={{ width: `${progressPercent}%` }}></div>
       </div>
     </div>
   );
@@ -122,9 +122,7 @@ function ProgressBar({ activeKey, progressPercent, items = [], className = '', .
 
     if (scrollRef.current && scrollContainerWidth > 0) {
       const innerScrollWidth = innerScrollRef.current.offsetWidth;
-      console.log('innerScrollWidth:', innerScrollWidth);
       const overScrollWidth = translateX + (scrollContainerWidth / 1.5) * -1;
-      console.log('overScrollWidth:', overScrollWidth);
 
       if (!isDragging && overScrollWidth < innerScrollWidth * -1) {
         const x = innerScrollWidth - scrollContainerWidth / 1.5;
@@ -145,7 +143,7 @@ function ProgressBar({ activeKey, progressPercent, items = [], className = '', .
             }
             setFirstTranslateX(true);
           }
-        }, 500);
+        }, 300);
       }
 
       return () => clearTimeout(timer.current);
