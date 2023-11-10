@@ -1,6 +1,6 @@
 {
   "name": "anythink-ui",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "packageManager": "^npm@9.0.0",
   "description": "UI",
   "main": "./dist/cjs/index.js",

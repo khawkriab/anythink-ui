@@ -1,0 +1,131 @@
+/* form group #fieldset */
+.exp-form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.exp-form-group fieldset {
+    margin-bottom: 0;
+}
+
+/* layout #grid */
+.exp-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* label */
+.exp-form-label {
+    margin-bottom: 0.5rem;
+}
+
+.exp-form-label-small {
+    font-size: 80%;
+}
+
+.exp-form-required {
+    color: var(--input-invalid-color);
+}
+
+
+/* input */
+.exp-form-date-display {
+    position: relative;
+}
+
+.exp-form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--input-color);
+    background-color: var(--input-background-color);
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.exp-form-control:focus {
+    color: var(--input-color);
+    background-color: var(--input-background-color);
+    border-color: var(--input-border-color);
+    outline: 0;
+}
+
+textarea.exp-form-control {
+    height: auto;
+}
+
+
+
+
+/* default style */
+.exp-invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: var(--input-invalid-color);
+}
+
+
+.exp-validate-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: none;
+}
+
+.exp-form-recommend {
+    color: var(--black-1);
+}
+
+
+.exp-form-check {
+    position: relative;
+}
+
+.exp-form-check input {
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: 0;
+}
+
+.exp-form-check label {
+    padding-left: 1.25rem;
+}
+
+
+/* form validate */
+/* invalid message */
+.exp-was-validated fieldset:invalid .exp-invalid-feedback,
+fieldset:invalid .is-invalid~.exp-invalid-feedback,
+fieldset:invalid .exp-invalid-feedback.is-invalid {
+    display: block;
+}
+
+/* invalid input */
+.exp-was-validated fieldset:invalid .exp-form-control,
+fieldset:invalid .exp-form-control.is-invalid {
+    border-color: var(--input-invalid-border-color);
+}
+
+/* invalid date */
+fieldset:invalid .exp-validate-date.is-invalid~.exp-form-date-display .exp-form-control {
+    border-color: var(--input-invalid-border-color);
+}
+
+/* invalid checkbox, radio */
+.exp-was-validated fieldset:invalid .exp-form-check-input+label,
+fieldset:invalid .exp-form-check-input.is-invalid+label {
+    color: var(--input-invalid-color);
+    border-color: var(--input-invalid-border-color);
+}
