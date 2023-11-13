@@ -2,9 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 
 export type TColOptions = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'auto' | boolean;
-
-export interface ICol extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  as?: string;
+export type TCols = {
   xs?: TColOptions;
   sm?: TColOptions;
   md?: TColOptions;
@@ -12,6 +10,10 @@ export interface ICol extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLD
   xl?: TColOptions;
   xxl?: TColOptions;
   xxxl?: TColOptions;
+};
+
+export interface ICol extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, TCols {
+  as?: string;
   className?: string;
   children: React.ReactNode;
 }

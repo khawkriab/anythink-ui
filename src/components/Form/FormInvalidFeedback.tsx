@@ -2,9 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 interface IFormInvalidFeedback extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  isInvalid: boolean;
-  className: string;
-  children: React.ReactNode;
+  isInvalid?: boolean;
 }
 
 function FormInvalidFeedback({ isInvalid = false, className, children, ...props }: Readonly<IFormInvalidFeedback>) {

@@ -3,10 +3,10 @@ import React from 'react';
 
 export interface IFormLabel
   extends React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement> {
-  textSmall: boolean;
-  required: boolean;
-  className: string;
-  children: React.ReactNode;
+  textSmall?: boolean;
+  required?: boolean;
+  className?: string;
+  children?: React.ReactNode;
 }
 
 function FormLabel({ textSmall = false, required = false, className, children, ...props }: Readonly<IFormLabel>) {
