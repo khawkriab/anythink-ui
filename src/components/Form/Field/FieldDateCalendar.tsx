@@ -8,7 +8,10 @@ import FormRecommend from '../FormRecommend';
 import { TCols } from '../../Grid/Col';
 import { css } from '@emotion/css';
 import breakpoint from '../../../utils/breakpoint';
+import ReactMobileDatepickerSlide from 'react-mobile-datepicker';
+import { LiftUp } from '../../..';
 
+const ReactMobileDatepicker = ReactMobileDatepickerSlide as React.ElementType;
 interface IFieldDateCalendar
   extends TCols,
     React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
@@ -22,9 +25,10 @@ interface IFieldDateCalendar
   isInvalid?: boolean;
   labelTextSmall?: boolean;
   titleTextSmall?: boolean;
+  onChangeDate?: (date: dayjs.Dayjs) => void;
 }
 
-const DatePickerSlideup = css`
+const datePickerSlideup = css`
   label: datepicker-slideup;
 
   position: relative;
@@ -143,22 +147,25 @@ function FieldDateCalendar({
   xxl,
   xxxl,
   children,
-  onChange = () => null,
+  onChangeDate = () => null,
   ...props
 }: Readonly<IFieldDateCalendar>) {
   const ref2 = React.useRef<HTMLInputElement>(null!);
   const inputRef = React.useRef<HTMLInputElement>(null!);
   //
-  const [showCalendar, setShowCalendar] = React.useState(false);
-  const [inputDate, setInputDate] = React.useState(value ? new Date(value as string) : new Date('01/01/1990'));
+  const [showCalendar, setShowCalendar] = React.useState<boolean>(false);
+  const [inputDate, setInputDate] = React.useState<Date>(value ? new Date(value as string) : new Date());
+  console.log('%c>> inputDate:', 'background: #00f; color: #fff', inputDate);
   //
 
-  //   const onSelectDate = (date) => {
-  //     onChange({ target: { value: moment(date) || '', name: props.name } });
-  //     setShowCalendar(false);
+  // const onSelectDate = (d: Date) => {
+  const onSelectDate = React.useCallback(() => {
+    console.log('%c>> d:', 'background: #00f; color: #fff', inputDate);
+    onChangeDate(dayjs(inputDate));
+    // setShowCalendar(false);
 
-  //     ref2.current.focus();
-  //   };
+    ref2.current.focus();
+  }, [inputDate]);
 
   React.useEffect(() => {
     const setInvalid = () => {
@@ -191,27 +198,27 @@ function FieldDateCalendar({
         ref={inputRef}
         type="date"
         value={value ? dayjs(value as string).format('YYYY-MM-DD') : ''}
-        className="exp-form-control exp-validate-date"
-        onChange={() => null} // bypass handle
+        className="form-control validate-date"
+        onChange={() => console.log('ccccc')} // bypass handle
       />
       {/* display */}
-      <div className={classNames('exp-form-date-display', className)}>
+      <div className={classNames('form-date-display', className)}>
         <input
-          className={classNames('exp-form-control', className)}
           ref={ref2}
           value={value ? dayjs(value as string).format(format) : ''}
           placeholder={props.placeholder || format}
           readOnly
+          className={classNames('form-control', className)}
           onClick={() => setShowCalendar(true)}
         />
 
-        {/* <EXPLiftUp.slideUp
+        <LiftUp.slideUp
           show={showCalendar}
           className="d-flex"
-          backgroundColor="transparent"
+          style={{ backgroundColor: 'transparent' }}
           onClose={() => setShowCalendar(false)}
         >
-          <DatePickerSlideup>
+          <div className={datePickerSlideup}>
             <div className="datepicker-overlay" onClick={() => setShowCalendar(false)}></div>
             <div className="datepicker-body">
               <ReactMobileDatepicker
@@ -222,18 +229,23 @@ function FieldDateCalendar({
                 showHeader={false}
                 dateConfig={ReactMobileDatepickerConfig}
                 value={inputDate}
-                max={props.max ? new Date(props.max) : undefined}
-                min={props.min ? new Date(props.min) : undefined}
-                onChange={(date) => setInputDate(date)}
+                // max={props.max ? new Date(props.max) : undefined}
+                // min={props.min ? new Date(props.min) : undefined}
+                onChange={(date: Date) => {
+                  console.log('%c>> datex:', 'background: #00f; color: #fff', date);
+
+                  setInputDate(date);
+                }}
               />
               <div className="datepicker-accept">
-                <button className="theme-btn theme-btn-primary" onClick={() => onSelectDate(inputDate)}>
-                  OK
-                </button>
+                {/* <button className="theme-btn theme-btn-primary" onClick={() => onSelectDate(inputDate)}> */}
               </div>
             </div>
-          </DatePickerSlideup>
-        </EXPLiftUp.slideUp> */}
+          </div>
+        </LiftUp.slideUp>
+        <button className="theme-btn theme-btn-primary" onClick={onSelectDate}>
+          OK
+        </button>
       </div>
 
       {children}

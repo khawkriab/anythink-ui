@@ -1,6 +1,6 @@
 {
-  "name": "anythink-ui",
-  "version": "0.1.0",
+  "name": "@pharmcare/ui",
+  "version": "0.0.1",
   "packageManager": "^npm@9.0.0",
   "description": "UI",
   "main": "./dist/cjs/index.js",
@@ -25,21 +25,14 @@
     "build:publish": "npm run build & npm publish --access=public",
     "clean": "rimraf ./dist && rimraf ./%npm_package_name%-%npm_package_version%.tgz",
     "dev": "npm run build && npm pack && cd example && npm i --save ../%npm_package_name%-%npm_package_version%.tgz && cross-env FAST_REFRESH=false react-scripts start",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/khawkriab/anythink-ui.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy:types": "copyfiles -f ./types/*.d.ts ./dist/types"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "author": "khawkriab sittisak",
+  "author": "khawkriab Sittisak",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/khawkriab/anythink-ui/issues"
-  },
-  "homepage": "https://github.com/khawkriab/anythink-ui.git#readme",
   "dependencies": {
     "@emotion/css": "^11.11.2",
     "@emotion/react": "^11.11.1",
@@ -56,11 +49,19 @@
     "@types/react": "^18.2.34",
     "@types/react-dom": "^18.2.14",
     "@types/react-input-mask": "^3.0.5",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "react-scripts": "^5.0.1",
     "rimraf": "^5.0.5"
   },
   "files": [
     "dist"
+  ],
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "pharmcare",
+    "ui"
   ]
 }

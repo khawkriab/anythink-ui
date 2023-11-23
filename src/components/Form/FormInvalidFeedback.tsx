@@ -7,7 +7,7 @@ interface IFormInvalidFeedback extends React.DetailedHTMLProps<React.HTMLAttribu
 
 function FormInvalidFeedback({ isInvalid = false, className, children, ...props }: Readonly<IFormInvalidFeedback>) {
   return (
-    <div {...props} className={classNames('exp-invalid-feedback', { 'is-invalid': isInvalid }, className)}>
+    <div {...props} className={classNames('invalid-feedback', { 'is-invalid': isInvalid }, className)}>
       {children}
     </div>
   );

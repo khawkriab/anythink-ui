@@ -69,12 +69,12 @@ function FieldCheckboxGroup({
           {title}
         </FormLabel>
       )}
-      <div className="exp-form-row">
+      <div className="form-row">
         {checkListGroup.map((item, index) => (
           <FieldCheckbox
             {...props}
             key={index}
-            className={classNames('exp-form-check-input', props.className)}
+            className={classNames('form-check-input', props.className)}
             type="checkbox"
             id={props.id ? `${props.id}-nth-${index}` : `${props.name}-nth-${index}`}
             label={item.label}

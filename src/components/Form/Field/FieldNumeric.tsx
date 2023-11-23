@@ -102,7 +102,7 @@ function FieldNumeric({
       )}
       <input
         {...props}
-        className={classNames('exp-form-control', props.className)}
+        className={classNames('form-control', props.className)}
         type="tel"
         ref={inputRef}
         onChange={onHandleNumber}

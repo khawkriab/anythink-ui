@@ -11,9 +11,9 @@ export interface IFormLabel
 
 function FormLabel({ textSmall = false, required = false, className, children, ...props }: Readonly<IFormLabel>) {
   return (
-    <label className={classNames('exp-form-label', { 'exp-form-label-small': textSmall }, className)}>
+    <label className={classNames('form-label', { 'form-label-small': textSmall }, className)}>
       {children}
-      {required && <span className="exp-form-required">*</span>}
+      {required && <span className="form-required">*</span>}
     </label>
   );
 }

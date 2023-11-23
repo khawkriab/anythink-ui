@@ -67,7 +67,7 @@ function FieldControl({
           {title ?? label}
         </FormLabel>
       )}
-      <input {...props} className={classNames('exp-form-control', props.className)} ref={inputRef} />
+      <input {...props} className={classNames('form-control', props.className)} ref={inputRef} />
       {children}
       {errorMsg && <FormInvalidFeedback>{errorMsg}</FormInvalidFeedback>}
       {recommendMsg && <FormRecommend>{recommendMsg}</FormRecommend>}

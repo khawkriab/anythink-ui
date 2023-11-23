@@ -91,14 +91,14 @@ function FieldDatePicker({
         ref={inputRef}
         type="date"
         value={value ? dayjs(value as string).format('YYYY-MM-DD') : ''}
-        className="exp-form-control exp-validate-date"
+        className="form-control validate-date"
         onChange={() => null} // bypass handle
       />
       {/* display */}
-      <div className={classNames('exp-form-date-display', className)}>
+      <div className={classNames('form-date-display', className)}>
         <input
           ref={ref}
-          className={classNames('exp-form-control', className)}
+          className={classNames('form-control', className)}
           value={value ? dayjs(value as string).format(format) : ''}
           placeholder={props.placeholder || format}
           readOnly

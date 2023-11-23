@@ -25,7 +25,7 @@ function FormField({
     event.preventDefault();
 
     if (form.checkValidity() === false) {
-      formRefs.current.classList.add('exp-was-validated');
+      formRefs.current.classList.add('was-validated');
       // callback
       onHandleValid(true);
 

@@ -67,7 +67,7 @@ function FieldFile({
       )}
       <input
         {...props}
-        className={classNames('exp-form-control', props.className)}
+        className={classNames('form-control', props.className)}
         id={props.id ? props.id : props.name}
         ref={inputRef}
         type="file"

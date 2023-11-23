@@ -67,7 +67,7 @@ function FieldTextArea({
           {title || label}
         </FormLabel>
       )}
-      <textarea {...props} className={classNames('exp-form-control', props.className)} ref={inputRef} />
+      <textarea {...props} className={classNames('form-control', props.className)} ref={inputRef} />
       {children}
       {errorMsg && <FormInvalidFeedback>{errorMsg}</FormInvalidFeedback>}
       {recommendMsg && <FormRecommend>{recommendMsg}</FormRecommend>}

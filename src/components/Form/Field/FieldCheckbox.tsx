@@ -47,7 +47,7 @@ function FieldCheckbox({
 
   return (
     <Col
-      className={classNames('exp-form-check', classNameField)}
+      className={classNames('form-check', classNameField)}
       xs={xs}
       sm={sm}
       md={md}
@@ -61,7 +61,7 @@ function FieldCheckbox({
         ref={inputRef}
         id={props.id ? props.id : props.name}
         type="checkbox"
-        className={classNames('exp-form-check-input', props.className)}
+        className={classNames('form-check-input', props.className)}
       />
       <label htmlFor={props.id ? props.id : props.name} className={classNames(classNameLabel)}>
         {label}

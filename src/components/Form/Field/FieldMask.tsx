@@ -71,12 +71,7 @@ function FieldMask({
         </FormLabel>
       )}
 
-      <InputMask
-        {...props}
-        className={classNames('exp-form-control', className)}
-        inputRef={inputRef}
-        maskChar={maskChar}
-      />
+      <InputMask {...props} className={classNames('form-control', className)} inputRef={inputRef} maskChar={maskChar} />
       {children}
       {errorMsg && <FormInvalidFeedback>{errorMsg}</FormInvalidFeedback>}
       {recommendMsg && <FormRecommend>{recommendMsg}</FormRecommend>}

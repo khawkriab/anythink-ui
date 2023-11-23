@@ -56,7 +56,7 @@ function FieldRadioGroup({
           {title}
         </FormLabel>
       )}
-      <div className="exp-form-row">
+      <div className="form-row">
         {radioListGroup.map((item, index) => (
           <FieldRadio
             {...props}
@@ -74,7 +74,7 @@ function FieldRadioGroup({
             xxl={item.xxl}
             xxxl={item.xxxl}
             isInvalid={isInvalid}
-            className={classNames('exp-form-check-input', { 'exp-form-label-small': titleTextSmall }, className)}
+            className={classNames('form-check-input', { 'form-label-small': titleTextSmall }, className)}
           />
         ))}
         {children}

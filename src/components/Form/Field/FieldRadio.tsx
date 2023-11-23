@@ -48,7 +48,7 @@ function FieldRadio({
 
   return (
     <Col
-      className={classNames('exp-form-check', classNameField)}
+      className={classNames('form-check', classNameField)}
       xs={xs}
       sm={sm}
       md={md}
@@ -59,7 +59,7 @@ function FieldRadio({
     >
       <input
         {...props}
-        className={classNames(['exp-form-check-input', props.className])}
+        className={classNames(['form-check-input', props.className])}
         ref={inputRef}
         type="radio"
         id={props.id ? props.id : props.name}

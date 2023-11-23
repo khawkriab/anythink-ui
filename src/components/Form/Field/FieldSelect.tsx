@@ -71,7 +71,7 @@ function FieldSelect({
           {title || label}
         </FormLabel>
       )}
-      <select {...props} className={classNames('exp-form-control', props.className)} ref={selectRef}>
+      <select {...props} className={classNames('form-control', props.className)} ref={selectRef}>
         {optionList.map((el, index) => (
           <option key={index} value={el.value}>
             {el.label}
